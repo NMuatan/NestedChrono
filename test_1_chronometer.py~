@@ -1,0 +1,9 @@
+import time
+
+from chronometer import Chronometer
+
+a = Chronometer()
+a.start()
+time.sleep(1000)
+a.stop()
+print(a)

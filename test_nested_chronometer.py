@@ -1,0 +1,57 @@
+import time
+
+from chronometer import ChronometerWithChilds
+
+a = ChronometerWithChilds(name="A")
+b = ChronometerWithChilds(name="B")
+c = ChronometerWithChilds(name="C")
+d = ChronometerWithChilds(name="D")
+e = ChronometerWithChilds(name="E")
+f = ChronometerWithChilds(name="F")
+g = ChronometerWithChilds(name="G")
+
+a.childs.append(b)
+a.childs.append(c)
+b.childs.append(d)
+b.childs.append(e)
+d.childs.append(f)
+e.childs.append(g)
+
+a.start()
+b.start()
+c.start()
+d.start()
+e.start()
+f.start()
+g.start()
+time.sleep(1)
+a.stop()
+time.sleep(1)
+b.stop()
+time.sleep(1)
+c.stop()
+time.sleep(1)
+d.stop()
+time.sleep(1)
+e.stop()
+time.sleep(1)
+f.stop()
+time.sleep(2)
+g.stop()
+
+a.update_total_time()
+b.update_total_time()
+c.update_total_time()
+d.update_total_time()
+e.update_total_time()
+f.update_total_time()
+g.update_total_time()
+
+print("a: {}\n"
+      "b: {}\n"
+      "c: {}\n"
+      "d: {}\n"
+      "e: {}\n"
+      "f: {}\n"
+      "g: {}\n".format(a, b, c, d, e, f, g))
+print("OUPUT SHALL BE: A: 29 seconds, B: 25 seconds, C: 3 seconds, D: 10 seconds, E: 13 seconds, F: 6 seconds, G: 8 seconds")
